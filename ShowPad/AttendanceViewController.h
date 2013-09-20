@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  AttendanceViewController.h
 //  ShowPad
 //
 //  Created by David Sieh on 9/15/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface AttendanceViewController : UIViewController
 
 @end
