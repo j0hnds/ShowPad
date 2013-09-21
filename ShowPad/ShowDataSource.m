@@ -12,7 +12,8 @@
 @interface ShowDataSource () {
     UITableView *_tableView;
     id<ShowDataSourceDelegate> _delegate;
-    NSArray *_fakeShowList;
+    NSArray *_showList;
+    ShowPuller *_showPuller;
 }
 
 - (id)initWithTableView:(UITableView *)tableView
@@ -39,42 +40,50 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _delegate = delegate;
+        _showList = nil;
+        _showPuller = [ShowPuller create];
+        [_showPuller pullAndLetMeKnow:self];
         
-        _fakeShowList = [NSArray arrayWithObjects:[Show createShowWithId:1 andName:@"Sept 2013"],
-                         [Show createShowWithId:2 andName:@"March 2013"],
-                         nil];
     }
     
     return self;
 }
 
-#pragma mark
+#pragma mark -
 #pragma mark UITableViewDataSource Methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Need to access the list of shows and return how many there are.
-    return _fakeShowList.count;
+    return (_showList) ? _showList.count : 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
     
     // Get the show that represents the index
-    Show *show = (Show *)[_fakeShowList objectAtIndex:indexPath.row];
+    Show *show = (Show *)[_showList objectAtIndex:indexPath.row];
     
     cell.textLabel.text = show.name;
     
     return cell;
 }
 
-#pragma mark
+#pragma mark -
 #pragma mark UITableViewDelegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Get the show that represents the index
-    Show *show = (Show *)[_fakeShowList objectAtIndex:indexPath.row];
+    Show *show = (Show *)[_showList objectAtIndex:indexPath.row];
     
     [_delegate showSelected:show];
+}
+
+#pragma mark -
+#pragma mark ShowPullerDelegate Methods
+
+- (void)pulledShows:(NSArray *)shows {
+    _showList = shows;
+    [_tableView reloadData];
 }
 
 @end

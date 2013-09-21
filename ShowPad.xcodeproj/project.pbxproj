@@ -28,6 +28,7 @@
 		1347912917E64DD900C4E59A /* ShowDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912817E64DD900C4E59A /* ShowDataSource.m */; };
 		1347912E17E64EC800C4E59A /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912D17E64EC800C4E59A /* Show.m */; };
 		1347913217E652E200C4E59A /* RestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347913117E652E200C4E59A /* RestRequest.m */; };
+		134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */ = {isa = PBXBuildFile; fileRef = 134924EC17EE4CA700A90ACB /* ShowPuller.m */; };
 		1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384429417EE390800FD5528 /* ShowTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,8 @@
 		1347912D17E64EC800C4E59A /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
 		1347913017E652E200C4E59A /* RestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestRequest.h; sourceTree = "<group>"; };
 		1347913117E652E200C4E59A /* RestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestRequest.m; sourceTree = "<group>"; };
+		134924EB17EE4CA700A90ACB /* ShowPuller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPuller.h; sourceTree = "<group>"; };
+		134924EC17EE4CA700A90ACB /* ShowPuller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPuller.m; sourceTree = "<group>"; };
 		1384429317EE390800FD5528 /* ShowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewController.h; sourceTree = "<group>"; };
 		1384429417EE390800FD5528 /* ShowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +137,7 @@
 		134790E217E643C700C4E59A /* ShowPad */ = {
 			isa = PBXGroup;
 			children = (
+				134924EA17EE4C6700A90ACB /* DataManagers */,
 				1347912F17E6527600C4E59A /* Utilities */,
 				1347912B17E64EA400C4E59A /* Models */,
 				1347912A17E64E9000C4E59A /* DataSources */,
@@ -218,6 +222,15 @@
 				1347913117E652E200C4E59A /* RestRequest.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		134924EA17EE4C6700A90ACB /* DataManagers */ = {
+			isa = PBXGroup;
+			children = (
+				134924EB17EE4CA700A90ACB /* ShowPuller.h */,
+				134924EC17EE4CA700A90ACB /* ShowPuller.m */,
+			);
+			name = DataManagers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +352,7 @@
 				1347912E17E64EC800C4E59A /* Show.m in Sources */,
 				1347913217E652E200C4E59A /* RestRequest.m in Sources */,
 				1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */,
+				134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

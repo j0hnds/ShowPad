@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShowPuller.h"
 
 @class Show;
 
@@ -16,7 +17,7 @@
 
 @end
 
-@interface ShowDataSource : NSObject <UITableViewDelegate, UITableViewDataSource>
+@interface ShowDataSource : NSObject <UITableViewDelegate, UITableViewDataSource, ShowPullerDelegate>
 
 + (id)createWithTableView:(UITableView *)tableView
                  delegate:(id<ShowDataSourceDelegate>)delegate;
