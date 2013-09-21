@@ -16,7 +16,7 @@
                                 <items>
                                     <barButtonItem title="Select Show" id="UJn-gS-0UD">
                                         <connections>
-                                            <segue destination="x93-qR-LYA" kind="popover" popoverAnchorBarButtonItem="UJn-gS-0UD" id="mAB-gk-5ID">
+                                            <segue destination="aQj-Ne-3pR" kind="popover" popoverAnchorBarButtonItem="UJn-gS-0UD" id="Prp-9Q-bJP">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -60,30 +60,33 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Exhibitors" id="7WH-Cc-Jso"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="registrationTable" destination="bVT-Py-bl7" id="sQ2-Jn-7z8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcM-NH-5OE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2154" y="-1240"/>
         </scene>
-        <!--Show List View Controller-->
-        <scene sceneID="ome-r3-CWt">
+        <!--Show Table View Controller-->
+        <scene sceneID="nZD-lw-KYu">
             <objects>
-                <viewController id="x93-qR-LYA" customClass="ShowListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="pai-Sl-3r6">
+                <viewController id="aQj-Ne-3pR" customClass="ShowTableViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="U7C-rE-aGa">
                         <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lnq-mf-P3i">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aRV-xP-j22">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShowCell" textLabel="HMo-yg-Xlb" style="IBUITableViewCellStyleDefault" id="H7h-eV-Q8W">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ShowCell" textLabel="evR-8S-bPA" style="IBUITableViewCellStyleDefault" id="ta1-Kw-8Rk">
                                         <rect key="frame" x="0.0" y="22" width="768" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="768" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HMo-yg-Xlb">
+                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evR-8S-bPA">
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -97,16 +100,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lnq-mf-P3i" firstAttribute="leading" secondItem="pai-Sl-3r6" secondAttribute="leading" type="default" id="IJk-rI-Y0p"/>
-                            <constraint firstItem="lnq-mf-P3i" firstAttribute="trailing" secondItem="pai-Sl-3r6" secondAttribute="trailing" type="default" id="h7o-lR-wi7"/>
-                            <constraint firstItem="lnq-mf-P3i" firstAttribute="top" secondItem="pai-Sl-3r6" secondAttribute="top" type="default" id="mvJ-IW-6R4"/>
-                            <constraint firstItem="lnq-mf-P3i" firstAttribute="bottom" secondItem="pai-Sl-3r6" secondAttribute="bottom" type="default" id="r3b-qa-IZz"/>
+                            <constraint firstItem="aRV-xP-j22" firstAttribute="leading" secondItem="U7C-rE-aGa" secondAttribute="leading" type="default" id="LRD-LG-4x7"/>
+                            <constraint firstItem="aRV-xP-j22" firstAttribute="trailing" secondItem="U7C-rE-aGa" secondAttribute="trailing" type="default" id="dYn-kA-uBm"/>
+                            <constraint firstItem="aRV-xP-j22" firstAttribute="bottom" secondItem="U7C-rE-aGa" secondAttribute="bottom" type="default" id="jQA-J0-gj6"/>
+                            <constraint firstItem="aRV-xP-j22" firstAttribute="top" secondItem="U7C-rE-aGa" secondAttribute="top" type="default" id="o6j-ut-Lcl"/>
                         </constraints>
                     </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="500"/>
+                    <connections>
+                        <outlet property="showTable" destination="aRV-xP-j22" id="pBz-Ny-qcv"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4U7-pP-Sgl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MqR-bx-Fkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3140" y="-950"/>
+            <point key="canvasLocation" x="3103" y="-1240"/>
         </scene>
         <!--Attendance View Controller - Buyers-->
         <scene sceneID="8im-o3-yno">
@@ -120,7 +127,7 @@
                                 <items>
                                     <barButtonItem title="Select Show" id="tQa-fP-NC3">
                                         <connections>
-                                            <segue destination="x93-qR-LYA" kind="popover" popoverAnchorBarButtonItem="tQa-fP-NC3" id="r3U-wu-xhg">
+                                            <segue destination="aQj-Ne-3pR" kind="popover" popoverAnchorBarButtonItem="tQa-fP-NC3" id="vZa-X8-4bp">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -172,7 +179,7 @@
         <scene sceneID="NmS-uU-gx7">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="urC-LC-qb3" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="x7d-QY-0BE">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -197,9 +204,15 @@
         </class>
         <class className="RegistrationViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/RegistrationViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="registrationTable" candidateClass="UITableView"/>
+            </relationships>
         </class>
-        <class className="ShowListViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowListViewController.h"/>
+        <class className="ShowTableViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowTableViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="showTable" candidateClass="UITableView"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -208,6 +221,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="r3U-wu-xhg"/>
+        <segue reference="vZa-X8-4bp"/>
     </inferredMetricsTieBreakers>
 </document>

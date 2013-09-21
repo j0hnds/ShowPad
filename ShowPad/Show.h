@@ -10,4 +10,9 @@
 
 @interface Show : NSObject
 
+@property (nonatomic) NSInteger showId;
+@property (strong, nonatomic) NSString *name;
+
++ (id)createShowWithId:(NSInteger)showId andName:(NSString *)name;
+
 @end

@@ -23,12 +23,12 @@
 		1347910617E643C800C4E59A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 134790DE17E643C700C4E59A /* Foundation.framework */; };
 		1347910E17E643C800C4E59A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1347910C17E643C800C4E59A /* InfoPlist.strings */; };
 		1347911117E643C800C4E59A /* ShowPadTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347911017E643C800C4E59A /* ShowPadTests.m */; };
-		1347911F17E64B4C00C4E59A /* ShowListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347911E17E64B4C00C4E59A /* ShowListViewController.m */; };
 		1347912217E64BD900C4E59A /* RegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912117E64BD900C4E59A /* RegistrationViewController.m */; };
 		1347912517E64C7C00C4E59A /* AttendanceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912417E64C7C00C4E59A /* AttendanceViewController.m */; };
 		1347912917E64DD900C4E59A /* ShowDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912817E64DD900C4E59A /* ShowDataSource.m */; };
 		1347912E17E64EC800C4E59A /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912D17E64EC800C4E59A /* Show.m */; };
 		1347913217E652E200C4E59A /* RestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347913117E652E200C4E59A /* RestRequest.m */; };
+		1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384429417EE390800FD5528 /* ShowTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,8 +63,6 @@
 		1347910D17E643C800C4E59A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1347910F17E643C800C4E59A /* ShowPadTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShowPadTests.h; sourceTree = "<group>"; };
 		1347911017E643C800C4E59A /* ShowPadTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShowPadTests.m; sourceTree = "<group>"; };
-		1347911D17E64B4C00C4E59A /* ShowListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowListViewController.h; sourceTree = "<group>"; };
-		1347911E17E64B4C00C4E59A /* ShowListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowListViewController.m; sourceTree = "<group>"; };
 		1347912017E64BD900C4E59A /* RegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistrationViewController.h; sourceTree = "<group>"; };
 		1347912117E64BD900C4E59A /* RegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistrationViewController.m; sourceTree = "<group>"; };
 		1347912317E64C7C00C4E59A /* AttendanceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttendanceViewController.h; sourceTree = "<group>"; };
@@ -75,6 +73,8 @@
 		1347912D17E64EC800C4E59A /* Show.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Show.m; sourceTree = "<group>"; };
 		1347913017E652E200C4E59A /* RestRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RestRequest.h; sourceTree = "<group>"; };
 		1347913117E652E200C4E59A /* RestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestRequest.m; sourceTree = "<group>"; };
+		1384429317EE390800FD5528 /* ShowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewController.h; sourceTree = "<group>"; };
+		1384429417EE390800FD5528 /* ShowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,12 +183,12 @@
 		1347912617E64DA600C4E59A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				1347911D17E64B4C00C4E59A /* ShowListViewController.h */,
-				1347911E17E64B4C00C4E59A /* ShowListViewController.m */,
 				1347912017E64BD900C4E59A /* RegistrationViewController.h */,
 				1347912117E64BD900C4E59A /* RegistrationViewController.m */,
 				1347912317E64C7C00C4E59A /* AttendanceViewController.h */,
 				1347912417E64C7C00C4E59A /* AttendanceViewController.m */,
+				1384429317EE390800FD5528 /* ShowTableViewController.h */,
+				1384429417EE390800FD5528 /* ShowTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -333,12 +333,12 @@
 			files = (
 				134790E917E643C700C4E59A /* main.m in Sources */,
 				134790ED17E643C700C4E59A /* AppDelegate.m in Sources */,
-				1347911F17E64B4C00C4E59A /* ShowListViewController.m in Sources */,
 				1347912217E64BD900C4E59A /* RegistrationViewController.m in Sources */,
 				1347912517E64C7C00C4E59A /* AttendanceViewController.m in Sources */,
 				1347912917E64DD900C4E59A /* ShowDataSource.m in Sources */,
 				1347912E17E64EC800C4E59A /* Show.m in Sources */,
 				1347913217E652E200C4E59A /* RestRequest.m in Sources */,
+				1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -529,6 +529,7 @@
 				1347911617E643C800C4E59A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1347911717E643C800C4E59A /* Build configuration list for PBXNativeTarget "ShowPadTests" */ = {
 			isa = XCConfigurationList;
@@ -537,6 +538,7 @@
 				1347911917E643C800C4E59A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

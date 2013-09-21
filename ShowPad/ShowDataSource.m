@@ -7,10 +7,12 @@
 //
 
 #import "ShowDataSource.h"
+#import "Show.h"
 
 @interface ShowDataSource () {
     UITableView *_tableView;
     id<ShowDataSourceDelegate> _delegate;
+    NSArray *_fakeShowList;
 }
 
 - (id)initWithTableView:(UITableView *)tableView
@@ -37,6 +39,10 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _delegate = delegate;
+        
+        _fakeShowList = [NSArray arrayWithObjects:[Show createShowWithId:1 andName:@"Sept 2013"],
+                         [Show createShowWithId:2 andName:@"March 2013"],
+                         nil];
     }
     
     return self;
@@ -47,15 +53,16 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Need to access the list of shows and return how many there are.
-    return 0;
+    return _fakeShowList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ShowCell"];
     
     // Get the show that represents the index
+    Show *show = (Show *)[_fakeShowList objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = @"A Show";
+    cell.textLabel.text = show.name;
     
     return cell;
 }
@@ -65,7 +72,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     // Get the show that represents the index
-    Show *show = nil;
+    Show *show = (Show *)[_fakeShowList objectAtIndex:indexPath.row];
     
     [_delegate showSelected:show];
 }

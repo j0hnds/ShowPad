@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShowTableViewController.h"
 
-@interface RegistrationViewController : UIViewController
+@interface RegistrationViewController : UIViewController <ShowTableSelectionDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *registrationTable;
 
 @end

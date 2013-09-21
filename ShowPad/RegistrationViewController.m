@@ -8,7 +8,11 @@
 
 #import "RegistrationViewController.h"
 
-@interface RegistrationViewController ()
+@interface RegistrationViewController () {
+    UIPopoverController *_showPopoverController;
+}
+
+- (void)dismissShowPopoverController;
 
 @end
 
@@ -33,6 +37,40 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *startingViewController;
+    
+    ShowTableViewController *showTable;
+    
+    startingViewController = (UIViewController *)segue.sourceViewController;
+    showTable = (ShowTableViewController *)segue.destinationViewController;
+    
+    _showPopoverController = ((UIStoryboardPopoverSegue *)segue).popoverController;
+    
+    NSLog(@"Setting the delegate for show selection");
+    
+    showTable.delegate = self;
+}
+
+#pragma mark -
+#pragma mark ShowTableViewControllerDelegate
+
+- (void)showSelected:(Show *)show {
+    NSLog(@"A show was selected");
+    [self dismissShowPopoverController];
+}
+
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)dismissShowPopoverController {
+    if (_showPopoverController) {
+        [_showPopoverController dismissPopoverAnimated:YES];
+        _showPopoverController = nil;
+    }
 }
 
 @end

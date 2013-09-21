@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShowTableViewController.h"
 
-@interface AttendanceViewController : UIViewController
+@interface AttendanceViewController : UIViewController <ShowTableSelectionDelegate>
 
 @end
