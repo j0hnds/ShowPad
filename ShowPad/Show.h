@@ -13,6 +13,7 @@
 @property (nonatomic) NSInteger showId;
 @property (strong, nonatomic) NSString *name;
 
-+ (id)createShowWithId:(NSInteger)showId andName:(NSString *)name;
++ (id)createShowWithId:(NSInteger)showId;
++ (id)createShowWithDictionary:(NSDictionary *)showData;
 
 @end

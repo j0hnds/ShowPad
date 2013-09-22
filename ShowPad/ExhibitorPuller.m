@@ -1,28 +1,28 @@
 //
-//  ShowPuller.m
+//  ExhibitorPuller.m
 //  ShowPad
 //
 //  Created by David Sieh on 9/21/13.
 //  Copyright (c) 2013 David Sieh. All rights reserved.
 //
 
-#import "ShowPuller.h"
+#import "ExhibitorPuller.h"
 #import "RestRequest.h"
-#import "Show.h"
+#import "Exhibitor.h"
 
-@interface ShowPuller () {
-    id<ShowPullerDelegate> _delegate;
+@interface ExhibitorPuller () {
+    id<ExhibitorPullerDelegate> _delegate;
 }
 
 - (id)init;
-- (NSArray *)mapToShows:(NSArray *)showHashes;
+- (NSArray *)mapToExhibitors:(NSArray *)exhibitorHashes;
 
 @end
 
-@implementation ShowPuller
+@implementation ExhibitorPuller
 
 + (id)create {
-    return [[ShowPuller alloc] init];
+    return [[ExhibitorPuller alloc] init];
 }
 
 - (id)init
@@ -34,8 +34,8 @@
     return self;
 }
 
-- (void)pullAndLetMeKnow:(id<ShowPullerDelegate>) delegate {
-    NSURL *url = [NSURL URLWithString:@"http://192.168.1.133:3000/shows"];
+- (void)pullAndLetMeKnow:(id<ExhibitorPullerDelegate>) delegate {
+    NSURL *url = [NSURL URLWithString:@"http://192.168.1.133:3000/exhibitors"];
     RestRequest *request = [RestRequest createRequestWithURL:url
                                                  andDelegate:self
                                           andIsAuthenticated:NO];
@@ -48,13 +48,13 @@
 #pragma mark RestRequestDelegate Methods
 
 - (void)request:(RestRequest *)request didFailWithError:(NSError *)error {
-    NSLog(@"Error pulling shows: %@", error.localizedDescription);
+    NSLog(@"Error pulling exhibitors: %@", error.localizedDescription);
 }
 
 - (void)requestDidFinishLoading:(RestRequest *)request {
     switch (request.statusCode) {
         case 200: // Success
-            [_delegate pulledShows:[self mapToShows:request.responseObject]];
+            [_delegate pulledExhibitors:[self mapToExhibitors:request.responseObject]];
             break;
         default:
             NSLog(@"Something other than a 200");
@@ -62,14 +62,14 @@
     }
 }
 
-- (NSArray *)mapToShows:(NSArray *)showHashes {
-    NSMutableArray *shows = [NSMutableArray array];
+- (NSArray *)mapToExhibitors:(NSArray *)exhibitorHashes {
+    NSMutableArray *exhibitors = [NSMutableArray array];
     
-    for (NSDictionary *showData in showHashes) {
-        [shows addObject:[Show createShowWithDictionary:showData]];
+    for (NSDictionary *exhibitorData in exhibitorHashes) {
+        [exhibitors addObject:[Exhibitor createExhibitorWithDictionary:exhibitorData]];
     }
     
-    return shows;
+    return exhibitors;
 }
 
 @end

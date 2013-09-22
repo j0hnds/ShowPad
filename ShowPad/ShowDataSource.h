@@ -10,12 +10,7 @@
 #import "ShowPuller.h"
 
 @class Show;
-
-@protocol ShowDataSourceDelegate <NSObject>
-
-- (void)showSelected:(Show *)show;
-
-@end
+@protocol ShowDataSourceDelegate;
 
 @interface ShowDataSource : NSObject <UITableViewDelegate, UITableViewDataSource, ShowPullerDelegate>
 
@@ -23,3 +18,10 @@
                  delegate:(id<ShowDataSourceDelegate>)delegate;
 
 @end
+
+@protocol ShowDataSourceDelegate <NSObject>
+
+- (void)showSelected:(Show *)show;
+
+@end
+

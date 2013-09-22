@@ -10,7 +10,8 @@
 
 @interface Show ()
 
-- (id)initShowWithId:(NSInteger)showId andName:(NSString *)name;
+- (id)initShowWithId:(NSInteger)showId;
+- (id)initShowWithDictionary:(NSDictionary *)showData;
 
 @end
 
@@ -19,15 +20,27 @@
 @synthesize showId=_showId;
 @synthesize name=_name;
 
-+ (id)createShowWithId:(NSInteger)showId andName:(NSString *)name {
-    return [[Show alloc] initShowWithId:showId andName:name];
++ (id)createShowWithId:(NSInteger)showId {
+    return [[Show alloc] initShowWithId:showId];
 }
 
-- (id)initShowWithId:(NSInteger)showId andName:(NSString *)name {
++ (id)createShowWithDictionary:(NSDictionary *)showData {
+  return [[Show alloc] initShowWithDictionary:showData];
+}
+
+- (id)initShowWithId:(NSInteger)showId {
     self = [super init];
     if (self) {
         _showId = showId;
-        _name = name;
+    }
+    return self;
+}
+
+- (id)initShowWithDictionary:(NSDictionary *)showData {
+    self = [super init];
+    if (self) {
+      self.showId = [[showData objectForKey:@"id"] intValue];
+      self.name = [showData objectForKey:@"name"];
     }
     return self;
 }
