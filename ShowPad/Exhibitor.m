@@ -35,7 +35,7 @@
 }
 
 + (id)createExhibitorWithDictionary:(NSDictionary *)exhibitorData {
-  return [[Exhibitor alloc] initExhibitorWithDictionary:exhibitorData];
+    return [[Exhibitor alloc] initExhibitorWithDictionary:exhibitorData];
 }
 
 - (id)initExhibitorWithId:(NSInteger)exhibitorId {
@@ -49,39 +49,39 @@
 - (id)initExhibitorWithDictionary:(NSDictionary *)exhibitorData {
     self = [super init];
     if (self) {
-      self.exhibitorId = [[exhibitorData objectForKey:@"id"] intValue];
-      self.firstName = [exhibitorData objectForKey:@"first_name"];
-      self.lastName = [exhibitorData objectForKey:@"last_name"];
-      self.address1 = [exhibitorData objectForKey:@"address_1"];
-      self.address2 = [exhibitorData objectForKey:@"address_2"];
-      self.city = [exhibitorData objectForKey:@"city"];
-      self.state = [exhibitorData objectForKey:@"state"];
-      self.postalCode = [exhibitorData objectForKey:@"postal_code"];
+        self.exhibitorId = [[exhibitorData objectForKey:@"id"] intValue];
+        self.firstName = [exhibitorData objectForKey:@"first_name"];
+        self.lastName = [exhibitorData objectForKey:@"last_name"];
+        self.address1 = [exhibitorData objectForKey:@"address_1"];
+        self.address2 = [exhibitorData objectForKey:@"address_2"];
+        self.city = [exhibitorData objectForKey:@"city"];
+        self.state = [exhibitorData objectForKey:@"state"];
+        self.postalCode = [exhibitorData objectForKey:@"postal_code"];
 
-      // Loop through all the phones and put them in the correct spot
-      for (NSDictionary *phoneData in [exhibitorData objectForKey:@"phones"]) {
-	NSString *emailType = [phoneData objectForKey:@"email_type"];
-	if ([@"phone" isEqualToString:emailType]) {
-	  self.phone = [phoneData objectForKey:@"phone_number"];
-	} else if ([@"fax" isEqualToString:emailType]) {
-	  self.fax = [phoneData objectForKey:@"phone_number"];
-	} else if ([@"cell" isEqualToString:emailType]) {
-	  self.cell = [phoneData objectForKey:@"phone_number"];
-	}
-      }
+        // Loop through all the phones and put them in the correct spot
+        for (NSDictionary *phoneData in [exhibitorData objectForKey:@"phones"]) {
+            NSString *emailType = [phoneData objectForKey:@"email_type"];
+            if ([@"phone" isEqualToString:emailType]) {
+                self.phone = [phoneData objectForKey:@"phone_number"];
+            } else if ([@"fax" isEqualToString:emailType]) {
+                self.fax = [phoneData objectForKey:@"phone_number"];
+            } else if ([@"cell" isEqualToString:emailType]) {
+                self.cell = [phoneData objectForKey:@"phone_number"];
+            }
+        }
 
-      // There should be zero or one emails on an exhibitor
-      NSArray *emails = [exhibitorData objectForKey:@"emails"];
-      if ([emails count] > 0) {
-	NSDictionary *emailData = [emails firstObject];
-	self.email = [emailData objectForKey:@"address"];
-      }
+        // There should be zero or one emails on an exhibitor
+        NSArray *emails = [exhibitorData objectForKey:@"emails"];
+        if ([emails count] > 0) {
+            NSDictionary *emailData = emails.lastObject;
+            self.email = [emailData objectForKey:@"address"];
+        }
     }
     return self;
 }
 
 - (NSString *)formattedName {
-  return [String stringWithFormat:@"%s, %@", self.lastName, self.firstName];
+    return [NSString stringWithFormat:@"%@, %@", self.lastName, self.firstName];
 }
 
 @end

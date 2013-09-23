@@ -30,6 +30,9 @@
 		1347913217E652E200C4E59A /* RestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347913117E652E200C4E59A /* RestRequest.m */; };
 		134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */ = {isa = PBXBuildFile; fileRef = 134924EC17EE4CA700A90ACB /* ShowPuller.m */; };
 		1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384429417EE390800FD5528 /* ShowTableViewController.m */; };
+		5DB34AD217F0FA8F00809009 /* Exhibitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD117F0FA8F00809009 /* Exhibitor.m */; };
+		5DB34AD517F0FAA200809009 /* ExhibitorDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD417F0FAA200809009 /* ExhibitorDataSource.m */; };
+		5DB34AD817F0FACB00809009 /* ExhibitorPuller.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD717F0FACB00809009 /* ExhibitorPuller.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,12 @@
 		134924EC17EE4CA700A90ACB /* ShowPuller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPuller.m; sourceTree = "<group>"; };
 		1384429317EE390800FD5528 /* ShowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewController.h; sourceTree = "<group>"; };
 		1384429417EE390800FD5528 /* ShowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewController.m; sourceTree = "<group>"; };
+		5DB34AD017F0FA8F00809009 /* Exhibitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exhibitor.h; sourceTree = "<group>"; };
+		5DB34AD117F0FA8F00809009 /* Exhibitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exhibitor.m; sourceTree = "<group>"; };
+		5DB34AD317F0FAA200809009 /* ExhibitorDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorDataSource.h; sourceTree = "<group>"; };
+		5DB34AD417F0FAA200809009 /* ExhibitorDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorDataSource.m; sourceTree = "<group>"; };
+		5DB34AD617F0FACB00809009 /* ExhibitorPuller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorPuller.h; sourceTree = "<group>"; };
+		5DB34AD717F0FACB00809009 /* ExhibitorPuller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorPuller.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +209,8 @@
 		1347912A17E64E9000C4E59A /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
+				5DB34AD317F0FAA200809009 /* ExhibitorDataSource.h */,
+				5DB34AD417F0FAA200809009 /* ExhibitorDataSource.m */,
 				1347912717E64DD900C4E59A /* ShowDataSource.h */,
 				1347912817E64DD900C4E59A /* ShowDataSource.m */,
 			);
@@ -209,6 +220,8 @@
 		1347912B17E64EA400C4E59A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5DB34AD017F0FA8F00809009 /* Exhibitor.h */,
+				5DB34AD117F0FA8F00809009 /* Exhibitor.m */,
 				1347912C17E64EC800C4E59A /* Show.h */,
 				1347912D17E64EC800C4E59A /* Show.m */,
 			);
@@ -227,6 +240,8 @@
 		134924EA17EE4C6700A90ACB /* DataManagers */ = {
 			isa = PBXGroup;
 			children = (
+				5DB34AD617F0FACB00809009 /* ExhibitorPuller.h */,
+				5DB34AD717F0FACB00809009 /* ExhibitorPuller.m */,
 				134924EB17EE4CA700A90ACB /* ShowPuller.h */,
 				134924EC17EE4CA700A90ACB /* ShowPuller.m */,
 			);
@@ -353,6 +368,9 @@
 				1347913217E652E200C4E59A /* RestRequest.m in Sources */,
 				1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */,
 				134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */,
+				5DB34AD217F0FA8F00809009 /* Exhibitor.m in Sources */,
+				5DB34AD517F0FAA200809009 /* ExhibitorDataSource.m in Sources */,
+				5DB34AD817F0FACB00809009 /* ExhibitorPuller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
