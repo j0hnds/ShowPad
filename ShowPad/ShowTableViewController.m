@@ -34,7 +34,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSLog(@"Hit the viewDidLoadMethod");
-    _showTable = [ShowDataSource createWithTableView:self.showTable delegate:self];
+    _showDataSource = [ShowDataSource createWithTableView:self.showTable delegate:self];
 
 }
 
