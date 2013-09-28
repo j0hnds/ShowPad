@@ -13,5 +13,6 @@
 @interface RegistrationViewController : UIViewController <ShowTableSelectionDelegate,ExhibitorDataSourceDelegate,UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *registrationTable;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *btnSelectShow;
 
 @end

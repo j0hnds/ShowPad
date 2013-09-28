@@ -29,6 +29,7 @@
 		1347912E17E64EC800C4E59A /* Show.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347912D17E64EC800C4E59A /* Show.m */; };
 		1347913217E652E200C4E59A /* RestRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 1347913117E652E200C4E59A /* RestRequest.m */; };
 		134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */ = {isa = PBXBuildFile; fileRef = 134924EC17EE4CA700A90ACB /* ShowPuller.m */; };
+		1363A13A17F773F300593C98 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1363A13917F773F300593C98 /* AppSettings.m */; };
 		1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384429417EE390800FD5528 /* ShowTableViewController.m */; };
 		5DB34AD217F0FA8F00809009 /* Exhibitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD117F0FA8F00809009 /* Exhibitor.m */; };
 		5DB34AD517F0FAA200809009 /* ExhibitorDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD417F0FAA200809009 /* ExhibitorDataSource.m */; };
@@ -79,6 +80,8 @@
 		1347913117E652E200C4E59A /* RestRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RestRequest.m; sourceTree = "<group>"; };
 		134924EB17EE4CA700A90ACB /* ShowPuller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPuller.h; sourceTree = "<group>"; };
 		134924EC17EE4CA700A90ACB /* ShowPuller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPuller.m; sourceTree = "<group>"; };
+		1363A13817F773F300593C98 /* AppSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSettings.h; sourceTree = "<group>"; };
+		1363A13917F773F300593C98 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
 		1384429317EE390800FD5528 /* ShowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewController.h; sourceTree = "<group>"; };
 		1384429417EE390800FD5528 /* ShowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewController.m; sourceTree = "<group>"; };
 		5DB34AD017F0FA8F00809009 /* Exhibitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exhibitor.h; sourceTree = "<group>"; };
@@ -233,6 +236,8 @@
 			children = (
 				1347913017E652E200C4E59A /* RestRequest.h */,
 				1347913117E652E200C4E59A /* RestRequest.m */,
+				1363A13817F773F300593C98 /* AppSettings.h */,
+				1363A13917F773F300593C98 /* AppSettings.m */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -370,6 +375,7 @@
 				134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */,
 				5DB34AD217F0FA8F00809009 /* Exhibitor.m in Sources */,
 				5DB34AD517F0FAA200809009 /* ExhibitorDataSource.m in Sources */,
+				1363A13A17F773F300593C98 /* AppSettings.m in Sources */,
 				5DB34AD817F0FACB00809009 /* ExhibitorPuller.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

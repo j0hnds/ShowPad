@@ -7,6 +7,8 @@
 //
 
 #import "RegistrationViewController.h"
+#import "AppSettings.h"
+#import "Show.h"
 
 @interface RegistrationViewController () {
     UIPopoverController *_showPopoverController;
@@ -20,6 +22,7 @@
 @implementation RegistrationViewController
 
 @synthesize registrationTable=_registrationTable;
+@synthesize btnSelectShow=_btnSelectShow;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +38,11 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     _exhibitorDataSource = [ExhibitorDataSource createWithTableView:self.registrationTable delegate:self];
+    
+    Show *currentShow = [AppSettings getCurrentShow];
+    if (currentShow) {
+        self.btnSelectShow.title = currentShow.name;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -64,6 +72,11 @@
 - (void)showSelected:(Show *)show {
     NSLog(@"A show was selected");
     [self dismissShowPopoverController];
+    
+    // Set the name of the selected show...
+    self.btnSelectShow.title = show.name;
+    
+    [AppSettings setCurrentShow:show];
 }
 
 
