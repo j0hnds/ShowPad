@@ -84,4 +84,9 @@
     return [NSString stringWithFormat:@"%@, %@", self.lastName, self.firstName];
 }
 
+- (BOOL)matchesFilterText:(NSString *)filterText {
+    return [self.firstName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound ||
+           [self.lastName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound;
+}
+
 @end

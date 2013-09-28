@@ -58,8 +58,7 @@
     _exhibitorList = [NSMutableArray array];
     if (filterText && filterText.length > 0) {
         for (Exhibitor *exhibitor in _fullList) {
-            if ([exhibitor.firstName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound ||
-                [exhibitor.lastName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound) {
+            if ([exhibitor matchesFilterText:filterText]) {
                 [((NSMutableArray *)_exhibitorList) addObject:exhibitor];
             }
         }
