@@ -17,6 +17,8 @@
 + (id)createWithTableView:(UITableView *)tableView
                  delegate:(id<ExhibitorDataSourceDelegate>)delegate;
 
+- (void)filterTable:(NSString *)filterText;
+
 @end
 
 @protocol ExhibitorDataSourceDelegate <NSObject>

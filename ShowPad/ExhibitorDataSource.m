@@ -13,7 +13,10 @@
     UITableView *_tableView;
     id<ExhibitorDataSourceDelegate> _delegate;
     NSArray *_exhibitorList;
+    NSArray *_fullList;
     ExhibitorPuller *_exhibitorPuller;
+    NSString *_filterText;
+    
 }
 
 - (id)initWithTableView:(UITableView *)tableView
@@ -47,6 +50,21 @@
     }
     
     return self;
+}
+
+- (void)filterTable:(NSString *)filterText {
+    _filterText = filterText;
+    _exhibitorList = nil;
+    _exhibitorList = [NSMutableArray array];
+    if (filterText && filterText.length > 0) {
+        for (Exhibitor *exhibitor in _fullList) {
+            if ([exhibitor.firstName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound ||
+                [exhibitor.lastName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound) {
+                [((NSMutableArray *)_exhibitorList) addObject:exhibitor];
+            }
+        }
+    }
+    [_tableView reloadData];
 }
 
 #pragma mark -
@@ -83,6 +101,7 @@
 
 - (void)pulledExhibitors:(NSArray *)exhibitors {
     _exhibitorList = exhibitors;
+    _fullList = [NSArray arrayWithArray:_exhibitorList];
     [_tableView reloadData];
 }
 

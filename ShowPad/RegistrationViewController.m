@@ -10,6 +10,7 @@
 
 @interface RegistrationViewController () {
     UIPopoverController *_showPopoverController;
+    ExhibitorDataSource *_exhibitorDataSource;
 }
 
 - (void)dismissShowPopoverController;
@@ -17,6 +18,8 @@
 @end
 
 @implementation RegistrationViewController
+
+@synthesize registrationTable=_registrationTable;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,6 +34,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    _exhibitorDataSource = [ExhibitorDataSource createWithTableView:self.registrationTable delegate:self];
 }
 
 - (void)didReceiveMemoryWarning
@@ -73,4 +77,17 @@
     }
 }
 
+#pragma mark -
+#pragma mark ExhibitorDataSourceDelegate methods
+
+- (void)exhibitorSelected:(Exhibitor *)show {
+    NSLog(@"Exhibitor Selected!!!");
+}
+
+#pragma mark -
+#pragma mark UISearchBarDelegate
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    [_exhibitorDataSource filterTable:searchText];
+}
 @end

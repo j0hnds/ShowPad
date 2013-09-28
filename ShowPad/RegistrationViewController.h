@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ShowTableViewController.h"
+#import "ExhibitorDataSource.h"
 
-@interface RegistrationViewController : UIViewController <ShowTableSelectionDelegate>
+@interface RegistrationViewController : UIViewController <ShowTableSelectionDelegate,ExhibitorDataSourceDelegate,UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *registrationTable;
 
