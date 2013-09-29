@@ -104,4 +104,9 @@
     [_tableView reloadData];
 }
 
+- (Exhibitor *)exhibitorAtRow:(NSInteger)row {
+    return [_exhibitorList objectAtIndex:row];
+}
+
+
 @end

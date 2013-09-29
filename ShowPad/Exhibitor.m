@@ -84,6 +84,22 @@
     return [NSString stringWithFormat:@"%@, %@", self.lastName, self.firstName];
 }
 
+- (NSString *)formattedInformation {
+    NSMutableString *s = [NSMutableString stringWithString:self.formattedName];
+    [s appendString:@"\n"];
+    if (self.address1 && self.address1.length > 0) {
+        [s appendString:self.address1];
+        [s appendString:@"\n"];
+    } else if (self.address2 && self.address2.length > 0) {
+        [s appendString:self.address2];
+        [s appendString:@"\n"];
+    }
+    [s appendFormat:@"%@, %@  %@", self.city, self.state, self.postalCode];
+    
+    return s;
+}
+
+
 - (BOOL)matchesFilterText:(NSString *)filterText {
     return [self.firstName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound ||
            [self.lastName rangeOfString:filterText options:NSCaseInsensitiveSearch].location != NSNotFound;

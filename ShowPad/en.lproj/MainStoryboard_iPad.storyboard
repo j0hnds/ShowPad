@@ -22,7 +22,7 @@
                                 <items>
                                     <barButtonItem title="Select Show" width="208" style="plain" id="UJn-gS-0UD">
                                         <connections>
-                                            <segue destination="aQj-Ne-3pR" kind="popover" popoverAnchorBarButtonItem="UJn-gS-0UD" id="Prp-9Q-bJP">
+                                            <segue destination="aQj-Ne-3pR" kind="popover" identifier="ShowPopover" popoverAnchorBarButtonItem="UJn-gS-0UD" id="Prp-9Q-bJP">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -60,6 +60,9 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="n1r-Px-gho" kind="modal" identifier="ExhibitorInfo" id="uII-iB-EyY"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -84,6 +87,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UcM-NH-5OE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2154" y="-1240"/>
+        </scene>
+        <!--Exhibitor Summary View Controller-->
+        <scene sceneID="8aM-de-sXg">
+            <objects>
+                <viewController id="n1r-Px-gho" customClass="ExhibitorSummaryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3zn-hI-0o4"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZAj-un-D6g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7md-rt-dGZ">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Exhibitor Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXv-1v-Pjl">
+                                <rect key="frame" x="20" y="20" width="288" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="522" translatesAutoresizingMaskIntoConstraints="NO" id="rBX-cV-ndp">
+                                <rect key="frame" x="20" y="61" width="522" height="104"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BhJ-7S-e1G">
+                                <rect key="frame" x="694" y="20" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismissSummary:" destination="n1r-Px-gho" eventType="touchUpInside" id="q3K-HM-TR4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <connections>
+                        <outlet property="lblExhibitorInfo" destination="rBX-cV-ndp" id="Yig-AG-Nkj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ilG-qe-OJn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3156" y="-1488"/>
         </scene>
         <!--Show Table View Controller-->
         <scene sceneID="nZD-lw-KYu">
@@ -128,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MqR-bx-Fkt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3103" y="-1240"/>
+            <point key="canvasLocation" x="3156" y="-367"/>
         </scene>
         <!--Attendance View Controller - Buyers-->
         <scene sceneID="8im-o3-yno">
@@ -147,7 +197,7 @@
                                 <items>
                                     <barButtonItem title="Select Show" id="tQa-fP-NC3">
                                         <connections>
-                                            <segue destination="aQj-Ne-3pR" kind="popover" popoverAnchorBarButtonItem="tQa-fP-NC3" id="vZa-X8-4bp">
+                                            <segue destination="aQj-Ne-3pR" kind="popover" identifier="ShowPopover" popoverAnchorBarButtonItem="tQa-fP-NC3" id="vZa-X8-4bp">
                                                 <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                             </segue>
                                         </connections>
@@ -222,6 +272,6 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Prp-9Q-bJP"/>
+        <segue reference="vZa-X8-4bp"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -27,6 +27,7 @@
 + (id)createExhibitorWithDictionary:(NSDictionary *)exhibitorData;
 
 - (NSString *)formattedName;
+- (NSString *)formattedInformation;
 - (BOOL)matchesFilterText:(NSString *)filterText;
 
 @end

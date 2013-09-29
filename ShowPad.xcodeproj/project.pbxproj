@@ -31,6 +31,7 @@
 		134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */ = {isa = PBXBuildFile; fileRef = 134924EC17EE4CA700A90ACB /* ShowPuller.m */; };
 		1363A13A17F773F300593C98 /* AppSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 1363A13917F773F300593C98 /* AppSettings.m */; };
 		1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1384429417EE390800FD5528 /* ShowTableViewController.m */; };
+		1394BF5317F8AC2C00499A11 /* ExhibitorSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1394BF5217F8AC2C00499A11 /* ExhibitorSummaryViewController.m */; };
 		5DB34AD217F0FA8F00809009 /* Exhibitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD117F0FA8F00809009 /* Exhibitor.m */; };
 		5DB34AD517F0FAA200809009 /* ExhibitorDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD417F0FAA200809009 /* ExhibitorDataSource.m */; };
 		5DB34AD817F0FACB00809009 /* ExhibitorPuller.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DB34AD717F0FACB00809009 /* ExhibitorPuller.m */; };
@@ -84,6 +85,8 @@
 		1363A13917F773F300593C98 /* AppSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppSettings.m; sourceTree = "<group>"; };
 		1384429317EE390800FD5528 /* ShowTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowTableViewController.h; sourceTree = "<group>"; };
 		1384429417EE390800FD5528 /* ShowTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowTableViewController.m; sourceTree = "<group>"; };
+		1394BF5117F8AC2C00499A11 /* ExhibitorSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorSummaryViewController.h; sourceTree = "<group>"; };
+		1394BF5217F8AC2C00499A11 /* ExhibitorSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExhibitorSummaryViewController.m; sourceTree = "<group>"; };
 		5DB34AD017F0FA8F00809009 /* Exhibitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Exhibitor.h; sourceTree = "<group>"; };
 		5DB34AD117F0FA8F00809009 /* Exhibitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Exhibitor.m; sourceTree = "<group>"; };
 		5DB34AD317F0FAA200809009 /* ExhibitorDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExhibitorDataSource.h; sourceTree = "<group>"; };
@@ -205,6 +208,8 @@
 				1347912417E64C7C00C4E59A /* AttendanceViewController.m */,
 				1384429317EE390800FD5528 /* ShowTableViewController.h */,
 				1384429417EE390800FD5528 /* ShowTableViewController.m */,
+				1394BF5117F8AC2C00499A11 /* ExhibitorSummaryViewController.h */,
+				1394BF5217F8AC2C00499A11 /* ExhibitorSummaryViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -374,6 +379,7 @@
 				1384429517EE390800FD5528 /* ShowTableViewController.m in Sources */,
 				134924ED17EE4CA700A90ACB /* ShowPuller.m in Sources */,
 				5DB34AD217F0FA8F00809009 /* Exhibitor.m in Sources */,
+				1394BF5317F8AC2C00499A11 /* ExhibitorSummaryViewController.m in Sources */,
 				5DB34AD517F0FAA200809009 /* ExhibitorDataSource.m in Sources */,
 				1363A13A17F773F300593C98 /* AppSettings.m in Sources */,
 				5DB34AD817F0FACB00809009 /* ExhibitorPuller.m in Sources */,

@@ -9,10 +9,12 @@
 #import "RegistrationViewController.h"
 #import "AppSettings.h"
 #import "Show.h"
+#import "ExhibitorSummaryViewController.h"
 
 @interface RegistrationViewController () {
     UIPopoverController *_showPopoverController;
     ExhibitorDataSource *_exhibitorDataSource;
+    Exhibitor *_currentExhibitor;
 }
 
 - (void)dismissShowPopoverController;
@@ -53,17 +55,25 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     UIViewController *startingViewController;
-    
-    ShowTableViewController *showTable;
-    
     startingViewController = (UIViewController *)segue.sourceViewController;
-    showTable = (ShowTableViewController *)segue.destinationViewController;
     
-    _showPopoverController = ((UIStoryboardPopoverSegue *)segue).popoverController;
+    if ([segue.identifier isEqualToString:@"ShowPopover"]) {
     
-    NSLog(@"Setting the delegate for show selection");
+        ShowTableViewController *showTable;
     
-    showTable.delegate = self;
+        showTable = (ShowTableViewController *)segue.destinationViewController;
+    
+        _showPopoverController = ((UIStoryboardPopoverSegue *)segue).popoverController;
+    
+        showTable.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"ExhibitorInfo"]) {
+        
+        NSIndexPath *path = self.registrationTable.indexPathForSelectedRow;
+        Exhibitor *exhibitor = [_exhibitorDataSource exhibitorAtRow:path.row];
+        ExhibitorSummaryViewController *summaryController = (ExhibitorSummaryViewController *)segue.destinationViewController;
+        
+        summaryController.exhibitor = exhibitor;
+    }
 }
 
 #pragma mark -
@@ -93,8 +103,9 @@
 #pragma mark -
 #pragma mark ExhibitorDataSourceDelegate methods
 
-- (void)exhibitorSelected:(Exhibitor *)show {
+- (void)exhibitorSelected:(Exhibitor *)exhibitor {
     NSLog(@"Exhibitor Selected!!!");
+    _currentExhibitor = exhibitor;
 }
 
 #pragma mark -

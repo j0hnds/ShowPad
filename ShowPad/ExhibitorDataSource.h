@@ -19,6 +19,8 @@
 
 - (void)filterTable:(NSString *)filterText;
 
+- (Exhibitor *)exhibitorAtRow:(NSInteger)row;
+
 @end
 
 @protocol ExhibitorDataSourceDelegate <NSObject>
