@@ -7,12 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExhibitorEntryViewController.h"
 
 @class Exhibitor;
 
-@interface ExhibitorSummaryViewController : UIViewController
+@interface ExhibitorSummaryViewController : UIViewController <ExhibitorEntryViewDelegate>
+
 @property (strong, nonatomic) IBOutlet UILabel *lblExhibitorInfo;
 
 @property (strong, nonatomic) Exhibitor *exhibitor;
+
+@property (readonly) BOOL exhibitorModified;
+
 - (IBAction)dismissSummary:(id)sender;
 @end

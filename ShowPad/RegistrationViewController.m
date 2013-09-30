@@ -73,6 +73,9 @@
         ExhibitorSummaryViewController *summaryController = (ExhibitorSummaryViewController *)segue.destinationViewController;
         
         summaryController.exhibitor = exhibitor;
+    } else if ([segue.identifier isEqualToString:@"NewExhibitor"]) {
+        ExhibitorEntryViewController *entryController = (ExhibitorEntryViewController *)segue.destinationViewController;
+        entryController.delegate = self;
     }
 }
 
@@ -113,5 +116,12 @@
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     [_exhibitorDataSource filterTable:searchText];
+}
+
+#pragma mark -
+#pragma mark ExhibitorEntryViewDelegate Methods
+
+- (void)exhibitorEditingComplete:(Exhibitor *)exhibitor {
+    NSLog(@"Got the new exhibitor");
 }
 @end

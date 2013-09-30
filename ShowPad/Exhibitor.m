@@ -60,7 +60,7 @@
 
         // Loop through all the phones and put them in the correct spot
         for (NSDictionary *phoneData in [exhibitorData objectForKey:@"phones"]) {
-            NSString *emailType = [phoneData objectForKey:@"email_type"];
+            NSString *emailType = [phoneData objectForKey:@"phone_type"];
             if ([@"phone" isEqualToString:emailType]) {
                 self.phone = [phoneData objectForKey:@"phone_number"];
             } else if ([@"fax" isEqualToString:emailType]) {
@@ -95,6 +95,22 @@
         [s appendString:@"\n"];
     }
     [s appendFormat:@"%@, %@  %@", self.city, self.state, self.postalCode];
+    if (self.phone && self.phone.length > 0) {
+        [s appendString:@"\n"];
+        [s appendFormat:@"Phone: %@", self.phone];
+    }
+    if (self.fax && self.fax.length > 0) {
+        [s appendString:@"\n"];
+        [s appendFormat:@"Fax: %@", self.fax];
+    }
+    if (self.cell && self.cell.length > 0) {
+        [s appendString:@"\n"];
+        [s appendFormat:@"Cell: %@", self.cell];
+    }
+    if (self.email && self.email.length > 0) {
+        [s appendString:@"\n"];
+        [s appendFormat:@"Email: %@", self.email];
+    }
     
     return s;
 }

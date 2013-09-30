@@ -11,12 +11,15 @@
 
 @interface ExhibitorSummaryViewController ()
 
+- (void)displayExhibitorInformation;
+
 @end
 
 @implementation ExhibitorSummaryViewController
 
 @synthesize lblExhibitorInfo=_lblExhibitorInfo;
 @synthesize exhibitor=_exhibitor;
+@synthesize exhibitorModified=_exhibitorModified;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -32,13 +35,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     // Sets the exhibitor information on the label
-    NSString *info = self.exhibitor.formattedInformation;
-    
-    NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:info];
-    NSRange range = NSMakeRange(0, [info rangeOfString:@"\n"].location);
-    [s addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18.0] range:range];
-    
-    self.lblExhibitorInfo.attributedText = s;
+    [self displayExhibitorInformation];
 
 }
 
@@ -46,6 +43,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    UIViewController *startingViewController;
+    startingViewController = (UIViewController *)segue.sourceViewController;
+    
+    if ([segue.identifier isEqualToString:@"EditExhibitor"]) {
+        ExhibitorEntryViewController *entryController = (ExhibitorEntryViewController *)segue.destinationViewController;
+        entryController.delegate = self;
+        entryController.exhibitor = self.exhibitor;
+    }
+}
+
+#pragma mark -
+#pragma mark ExhibitorEntryViewDelegate Methods
+
+- (void)exhibitorEditingComplete:(Exhibitor *)exhibitor {
+    NSLog(@"Completed exhibitor editing");
+    self.exhibitor = exhibitor;
+    _exhibitorModified = YES;
+    [self displayExhibitorInformation];
 }
 
 //- (void)setExhibitor:(Exhibitor *)exhibitor {
@@ -65,5 +83,18 @@
 //    ((ViewController *)self.presentingViewController).emailLabel.text=
 //    self.emailField.text;
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark -
+#pragma mark Private Methods
+
+- (void)displayExhibitorInformation {
+    NSString *info = self.exhibitor.formattedInformation;
+    
+    NSMutableAttributedString *s = [[NSMutableAttributedString alloc] initWithString:info];
+    NSRange range = NSMakeRange(0, [info rangeOfString:@"\n"].location);
+    [s addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:18.0] range:range];
+    
+    self.lblExhibitorInfo.attributedText = s;
 }
 @end
